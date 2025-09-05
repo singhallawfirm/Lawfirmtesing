@@ -1,0 +1,384 @@
+/* admin.css */
+
+body {
+    background-color: #f1f5f9;
+}
+
+.admin-main {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.editor-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.editor-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #0f172a;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group input[type="file"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Image Uploader Specific Styles */
+.image-uploader-group .image-upload-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.image-uploader-group .image-upload-options label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.image-preview {
+    display: none; /* Hidden by default */
+    max-width: 200px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+
+.editor-toolbar {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-bottom: none;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.toolbar-btn, .toolbar-select {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toolbar-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.toolbar-btn i {
+    font-size: 1rem;
+    color: #475569;
+}
+
+.toolbar-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #475569;
+}
+
+.editor-content {
+    border: 1px solid #cbd5e1;
+    min-height: 300px;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    outline: none;
+    color: #0f172a;
+    position: relative; /* For positioning resize handles */
+}
+
+.editor-content:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Styles for resizable images in the editor */
+.editor-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.editor-content img.resizable-image-selected {
+    outline: 3px solid #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.publish-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.publish-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.image-resize-handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #3b82f6;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    cursor: nwse-resize;
+    z-index: 10;
+}
+
+/* --- Content Management List --- */
+.content-management-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.content-management-container h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #0f172a;
+}
+
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-section h3 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.content-table-wrapper {
+    overflow-x: auto;
+}
+
+.content-management-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.content-management-container th,
+.content-management-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.content-management-container th {
+    background-color: #f8fafc;
+    font-weight: bold;
+    color: #475569;
+}
+
+.content-management-container td {
+    color: #334155;
+    vertical-align: middle;
+}
+
+.content-management-container .list-thumbnail {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.content-management-container .title-cell {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+.content-management-container .actions-cell {
+    white-space: nowrap;
+}
+
+.content-management-container .action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.content-management-container .edit-btn {
+    color: #3b82f6;
+}
+.content-management-container .edit-btn:hover {
+    color: #1d4ed8;
+}
+
+.content-management-container .delete-btn {
+    color: #ef4444;
+}
+.content-management-container .delete-btn:hover {
+    color: #b91c1c;
+}
+
+/* --- Confirmation Modal --- */
+.confirm-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+.confirm-modal-overlay.active {
+    display: flex;
+}
+.confirm-modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.confirm-modal-content h4 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    color: #0f172a;
+}
+.confirm-modal-content p {
+    margin: 0 0 25px 0;
+    color: #475569;
+    font-size: 1rem;
+}
+.confirm-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.confirm-modal-actions button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.confirm-modal-actions button:hover {
+    transform: translateY(-2px);
+}
+.btn-danger {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+}
+
+/* --- Login Page --- */
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.login-box h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #0f172a;
+    text-align: center;
+}
+
+.login-box .form-group input {
+    text-align: left;
+}
+
